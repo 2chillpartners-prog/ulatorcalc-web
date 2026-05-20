@@ -3,7 +3,6 @@ import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS
 
 const freeTier = [
   "Plain calculator mode",
-  "Exact feet-inch-fraction math",
   "Running tape & calculation history",
   "Deep-link sharing",
 ];

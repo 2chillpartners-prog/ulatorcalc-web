@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const comparison = [
   { feature: "Plain calculator mode", free: true, pro: true },
-  { feature: "Exact feet-inch-fraction math", free: true, pro: true },
+  { feature: "Exact feet-inch-fraction math", free: false, pro: true },
   { feature: "Running tape & calculation history", free: true, pro: true },
   { feature: "Deep-link sharing", free: true, pro: true },
   { feature: "Construction (framing) mode", free: false, pro: true },
