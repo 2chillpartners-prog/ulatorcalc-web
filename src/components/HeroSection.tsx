@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { APP_STORE_URL, PLAY_STORE_URL, TAGLINE, TAGLINE_SUB } from "@/lib/constants";
 
 export function HeroSection() {
@@ -62,41 +63,19 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Mock calculator display */}
+        {/* App screenshot */}
         <div className="mt-16 flex justify-center">
-          <div className="relative w-full max-w-sm">
-            <div className="bg-[#1B2838] rounded-2xl border border-white/10 overflow-hidden shadow-2xl glow-amber">
-              {/* Header bar */}
-              <div className="bg-[#243447] px-4 py-3 flex items-center gap-2">
-                <span className="text-[#8B9CB3] text-xs font-mono uppercase tracking-widest">Construction Mode</span>
-              </div>
-              {/* Display */}
-              <div className="p-6">
-                <div className="text-right mb-2">
-                  <span className="text-[#8B9CB3] text-sm font-mono">16 × 7′ - 5 3/16″</span>
-                </div>
-                <div className="text-right mb-6">
-                  <span className="text-[#F5A623] text-4xl font-mono font-bold tracking-tight">118′ - 3″</span>
-                </div>
-                {/* Keypad preview */}
-                <div className="grid grid-cols-4 gap-2">
-                  {["7", "8", "9", "÷", "4", "5", "6", "×", "1", "2", "3", "−", "ft", "in", "0", "+"].map((key) => (
-                    <div
-                      key={key}
-                      className={`rounded-lg py-3 text-center text-sm font-mono font-semibold ${
-                        ["+", "−", "×", "÷"].includes(key)
-                          ? "bg-[#d97706]/20 text-[#F5A623]"
-                          : ["ft", "in"].includes(key)
-                          ? "bg-[#d97706] text-white"
-                          : "bg-[#243447] text-[#C8D6E5]"
-                      }`}
-                    >
-                      {key}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="relative w-[280px] sm:w-[320px]">
+            {/* Ambient glow behind phone */}
+            <div className="absolute inset-0 scale-90 bg-[#d97706]/20 rounded-[3rem] blur-2xl" aria-hidden="true" />
+            <Image
+              src="/app-screenshot.png"
+              alt="ulator-Calc construction mode showing 15ft 7in + 13ft 6in = 29ft 1in with framing keypad"
+              width={320}
+              height={693}
+              className="relative rounded-[2.5rem] shadow-2xl border border-white/10 w-full h-auto"
+              priority
+            />
           </div>
         </div>
       </div>
