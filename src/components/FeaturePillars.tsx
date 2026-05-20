@@ -37,7 +37,7 @@ export function FeaturePillars() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Built simple. Built right.
+            Built Simple, Built Right.
           </h2>
           <p className="text-[#8B9CB3] text-lg max-w-xl mx-auto">
             Every professional deserves digital tools that actually match the way they work.
