@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { APP_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS } from "@/lib/constants";
 
 const freeTier = [
   "Exact feet-inch-fraction math",
@@ -48,14 +48,14 @@ export function PricingTeaser() {
                 </li>
               ))}
             </ul>
-            <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3 rounded-xl transition-colors text-sm"
-            >
-              Download Free
-            </a>
+            <div className="flex flex-col gap-2">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3 rounded-xl transition-colors text-sm">
+                App Store
+              </a>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3 rounded-xl transition-colors text-sm">
+                Google Play
+              </a>
+            </div>
           </div>
 
           {/* Pro */}
@@ -79,14 +79,14 @@ export function PricingTeaser() {
                 </li>
               ))}
             </ul>
-            <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center bg-[#d97706] hover:bg-[#F5A623] text-white font-bold py-3 rounded-xl transition-colors text-sm"
-            >
-              Start Free Trial
-            </a>
+            <div className="flex flex-col gap-2">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#d97706] hover:bg-[#F5A623] text-white font-bold py-3 rounded-xl transition-colors text-sm">
+                App Store — Start Free Trial
+              </a>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#d97706]/80 hover:bg-[#d97706] text-white font-bold py-3 rounded-xl transition-colors text-sm">
+                Google Play — Start Free Trial
+              </a>
+            </div>
           </div>
         </div>
 

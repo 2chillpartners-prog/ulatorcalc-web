@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "What trade modes are available?",
-    a: "Construction, Electrician, HVAC, Mechanic, Accountant, Pilot, Crane Operator, Chef, Scientist, Detective, and Plain. Each mode surfaces the formulas and units relevant to that trade.",
+    a: "Construction and Plain modes are available now. More trade modes are in development — leave your trade on the Feedback page and we'll prioritize accordingly.",
   },
   {
     q: "How does the AI assistant work?",
@@ -37,8 +37,8 @@ const faqs = [
     a: `Email us at ${SUPPORT_EMAIL} with a description of what happened and your iOS version. We typically respond within one business day.`,
   },
   {
-    q: "Is Android support planned?",
-    a: "Yes — Android is on our roadmap. Leave your email on our Feedback page and we'll let you know when it launches.",
+    q: "Is ulator-Calc available on Android?",
+    a: "Yes — ulator-Calc is available on both iOS (App Store) and Android (Google Play). Download free on either platform.",
   },
 ];
 

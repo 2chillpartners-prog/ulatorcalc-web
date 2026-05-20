@@ -10,7 +10,7 @@ export function ModesGrid() {
           </h2>
           <p className="text-[#8B9CB3] text-lg max-w-2xl mx-auto">
             We want to give every professional the digital tools they need.
-            11 dedicated trade modes — each with purpose-built formulas and units.
+            Built for the job site — with more trade modes on the way.
           </p>
         </div>
 
