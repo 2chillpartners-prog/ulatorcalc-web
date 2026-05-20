@@ -13,8 +13,8 @@ export function FeedbackSection() {
           Tell us what you need.
         </h2>
         <p className="text-[#8B9CB3] text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          ulator-Calc was built by framers. If there&apos;s a formula or feature that would
-          save you time on the job — we want to hear it.
+          ulator-Calc was built by construction workers — framers and concrete crews alike.
+          If there&apos;s a formula or feature that would save you time on the job, we want to hear it.
         </p>
 
         <div className="bg-[#1B2838] border border-white/10 rounded-2xl p-8 sm:p-10 hover:border-[#d97706]/30 transition-colors text-left">
@@ -27,7 +27,7 @@ export function FeedbackSection() {
                 <span className="text-[#C8D6E5] font-semibold text-sm">What do you frame?</span>
               </div>
               <p className="text-[#8B9CB3] text-sm pl-11 leading-relaxed">
-                Residential, commercial, metal stud — tell us what you&apos;re working on.
+                Framing, concrete, general contractor — tell us what you&apos;re working on.
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export function FeedbackSection() {
                 <span className="text-[#C8D6E5] font-semibold text-sm">What would make it a must-have?</span>
               </div>
               <p className="text-[#8B9CB3] text-sm pl-11 leading-relaxed">
-                We&apos;re building toward one tool that every framer actually keeps on their phone.
+                We&apos;re building toward one tool that every construction worker actually keeps on their phone.
               </p>
             </div>
 

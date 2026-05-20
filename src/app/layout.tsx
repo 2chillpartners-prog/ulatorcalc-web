@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${APP_NAME}`,
   },
   description:
-    "The calculator built for framers. Exact feet-inch fractions, 50+ framing formulas — studs, rafters, stairs, board feet — and an AI assistant that knows construction.",
+    "The calculator built for construction. Exact feet-inch fractions, 50+ formulas for framers and concrete workers — studs, rafters, slabs, footings — and an AI assistant that knows the job site.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     siteName: APP_NAME,

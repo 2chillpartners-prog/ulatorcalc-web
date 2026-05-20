@@ -1,9 +1,9 @@
 const features = [
   {
-    eyebrow: "50+ Framing Formulas",
+    eyebrow: "50+ Construction Formulas",
     title: "Every formula you'd reach for on the job site.",
-    body: "Stud count, stair risers, board feet, rafter length, pitch angle — built in and labeled so you can find them in 10 seconds, not 10 minutes of scrolling.",
-    detail: ["Stud / joist / rafter spacing", "Stair rise & run", "Rafter length & pitch", "Board feet & linear feet", "Roof area & slope", "Wall & floor framing"],
+    body: "Whether you're framing or pouring — stud counts, rafter lengths, concrete volume, footing sizes — built in and labeled so you can find them in 10 seconds, not 10 minutes of scrolling.",
+    detail: ["Stud / joist / rafter spacing", "Stair rise & run", "Rafter length & pitch", "Concrete volume & slabs", "Footing & column sizing", "Board feet & roof area"],
     flip: false,
   },
   {
@@ -23,8 +23,8 @@ const features = [
   {
     eyebrow: "AI Assistant (Pro)",
     title: "An AI that's been on the job site.",
-    body: "Ask in plain English. Get a step-by-step framing breakdown — not a generic search result. It's not a chatbot — it's framing knowledge, on demand.",
-    detail: ["Powered by OpenAI", "Voice input via Deepgram", "Knows framing math and terminology", "Explains the why, not just the answer"],
+    body: "Ask in plain English. Get a step-by-step construction breakdown — framing counts, concrete volumes, whatever you need. Not a chatbot — construction knowledge, on demand.",
+    detail: ["Powered by OpenAI", "Voice input via Deepgram", "Knows framing and concrete math", "Explains the why, not just the answer"],
     flip: true,
   },
 ];

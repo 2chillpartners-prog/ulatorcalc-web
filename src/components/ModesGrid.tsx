@@ -6,11 +6,11 @@ export function ModesGrid() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Built for the framing crew.
+            Built for the construction crew.
           </h2>
           <p className="text-[#8B9CB3] text-lg max-w-2xl mx-auto">
-            We want to give every framer the digital tools they need.
-            Two focused modes — no bloat, no clutter.
+            We want to give every construction worker the digital tools they need —
+            whether you&apos;re framing walls or pouring concrete.
           </p>
         </div>
 
@@ -22,7 +22,7 @@ export function ModesGrid() {
             </span>
             <span className="text-4xl">🏗️</span>
             <span className="text-sm font-semibold text-[#F5A623]">Construction</span>
-            <span className="text-xs text-[#8B9CB3]">50+ trade formulas</span>
+            <span className="text-xs text-[#8B9CB3]">Framing &amp; concrete formulas</span>
           </div>
           {/* Plain — Free */}
           <div className="relative bg-[#1B2838] border border-white/10 rounded-xl p-6 flex flex-col items-center text-center gap-3 hover:border-white/25 transition-colors">

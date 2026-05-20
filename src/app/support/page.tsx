@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "What calculator modes are available?",
-    a: "Plain mode is free. Construction mode — purpose-built for framers, with 50+ formulas for studs, stairs, rafters, board feet, roof area, and more — is included with Pro.",
+    a: "Plain mode is free. Construction mode — built for framers and concrete crews, with 50+ formulas covering studs, rafters, stairs, board feet, concrete volume, footing sizes, and more — is included with Pro.",
   },
   {
     q: "How does the AI assistant work?",

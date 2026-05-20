@@ -12,11 +12,13 @@ const frustrations = [
   "Other",
 ];
 
-const framingTypes = [
+const constructionTypes = [
   "Residential framing",
   "Commercial framing",
   "Metal stud framing",
   "Roof framing",
+  "Concrete / flatwork",
+  "Concrete / foundations & footings",
   "General contractor",
   "Other",
 ];
@@ -72,8 +74,8 @@ export default function FeedbackPage() {
         </span>
         <h1 className="text-4xl font-bold text-white mb-4">Tell us what you need.</h1>
         <p className="text-[#8B9CB3] text-lg leading-relaxed">
-          We built ulator-Calc on a framing job site. We want to keep improving it with input
-          from the people who actually use it. No spam, no sales — just real feedback.
+          We built ulator-Calc on construction job sites — framing crews and concrete workers.
+          We want to keep improving it with input from the people who actually use it. No spam, no sales — just real feedback.
         </p>
       </div>
 
@@ -96,7 +98,7 @@ export default function FeedbackPage() {
         {/* Framing type */}
         <div>
           <label className="block text-sm font-semibold text-[#C8D6E5] mb-2">
-            What kind of framing do you do? <span className="text-red-400">*</span>
+            What kind of construction do you do? <span className="text-red-400">*</span>
           </label>
           <select
             name="trade"
@@ -106,7 +108,7 @@ export default function FeedbackPage() {
             className="w-full bg-[#1B2838] border border-white/10 rounded-xl px-4 py-3 text-[#C8D6E5] focus:outline-none focus:border-[#d97706]/60 transition-colors text-sm appearance-none"
           >
             <option value="">Select…</option>
-            {framingTypes.map((t) => (
+            {constructionTypes.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
           </select>

@@ -10,7 +10,7 @@ const freeTier = [
 const proTier = [
   "Everything in Free",
   "Exact feet-inch-fraction math",
-  "Construction mode + 50+ trade formulas",
+  "Construction mode — framing + concrete formulas",
   "AI assistant with job-site knowledge",
   "Voice input (Deepgram)",
   "Priority support",
