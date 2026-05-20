@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ulatorcalc.com
+
+# Sitemaps
+Sitemap: https://ulatorcalc.com/sitemap.xml
