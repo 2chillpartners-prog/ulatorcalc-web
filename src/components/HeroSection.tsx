@@ -75,6 +75,9 @@ export function HeroSection() {
               className="relative rounded-[2.5rem] shadow-2xl border border-white/10 w-full h-auto"
               priority
             />
+            <p className="relative text-center text-[#8B9CB3] text-xs mt-3 tracking-wide">
+              Exact Math with Instant Conversion
+            </p>
           </div>
         </div>
       </div>
