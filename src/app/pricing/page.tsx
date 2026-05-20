@@ -3,16 +3,17 @@ import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "ulator-Calc is free. Pro adds the AI assistant. Simple.",
+  description: "Plain calculator free forever. Pro unlocks Construction mode, 50+ formulas, and AI. Simple.",
 };
 
 const comparison = [
-  { feature: "All 11 trade modes", free: true, pro: true },
-  { feature: "50+ professional formulas", free: true, pro: true },
+  { feature: "Plain calculator mode", free: true, pro: true },
   { feature: "Exact feet-inch-fraction math", free: true, pro: true },
   { feature: "Running tape & calculation history", free: true, pro: true },
   { feature: "Deep-link sharing", free: true, pro: true },
-  { feature: "AI assistant (trade-aware)", free: false, pro: true },
+  { feature: "Construction mode", free: false, pro: true },
+  { feature: "50+ professional formulas", free: false, pro: true },
+  { feature: "AI assistant (job-site aware)", free: false, pro: true },
   { feature: "Voice input (Deepgram)", free: false, pro: true },
   { feature: "Priority support", free: false, pro: true },
 ];
@@ -39,7 +40,7 @@ export default function PricingPage() {
           Simple. Honest. No tricks.
         </h1>
         <p className="text-[#8B9CB3] text-lg max-w-xl mx-auto">
-          The calculator is free — full stop. Pro is for the professionals who want an AI expert in their pocket.
+          Plain calculator is free forever. Pro unlocks Construction mode, 50+ trade formulas, and an AI assistant that knows the job site.
         </p>
       </div>
 
@@ -53,7 +54,7 @@ export default function PricingPage() {
             <span className="text-[#8B9CB3] ml-2">forever</span>
           </div>
           <p className="text-[#8B9CB3] text-sm mb-8">
-            Everything a working professional needs to calculate accurately, every day.
+            A powerful plain calculator with exact feet-inch-fraction math, running tape, and sharing. No account needed.
           </p>
           <div className="flex flex-col gap-2">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3.5 rounded-xl transition-colors">

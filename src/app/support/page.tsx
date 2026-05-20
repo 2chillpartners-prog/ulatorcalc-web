@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is ulator-Calc free?",
-    a: "The core calculator — all 11 trade modes, 50+ formulas, running tape, and sharing — is completely free. Pro adds the AI assistant and voice input for $4.99/month or $49.99/year, with a 7-day free trial.",
+    a: "The Plain calculator mode is completely free — exact feet-inch-fraction math, running tape, and deep-link sharing. Pro unlocks Construction mode, 50+ professional formulas, the AI assistant, and voice input for $4.99/month or $49.99/year, with a 7-day free trial.",
   },
   {
     q: "What trade modes are available?",
-    a: "Construction and Plain modes are available now. More trade modes are in development — leave your trade on the Feedback page and we'll prioritize accordingly.",
+    a: "Plain mode is free. Construction mode — with 50+ professional formulas for studs, stairs, rafters, board feet, and more — is included with Pro. More trade modes are in development.",
   },
   {
     q: "How does the AI assistant work?",

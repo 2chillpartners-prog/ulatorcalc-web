@@ -14,31 +14,25 @@ export function ModesGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {TRADE_MODES.map((mode, i) => (
-            <div
-              key={mode.slug}
-              className={`relative bg-[#1B2838] border rounded-xl p-5 flex flex-col items-center text-center gap-3 transition-all hover:-translate-y-0.5 ${
-                i === 0
-                  ? "border-[#d97706]/60 bg-[#d97706]/10 glow-amber"
-                  : "border-white/10 hover:border-[#d97706]/30"
-              }`}
-            >
-              {i === 0 && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-xs font-semibold bg-[#d97706] text-white px-2 py-0.5 rounded-full whitespace-nowrap">
-                  Featured
-                </span>
-              )}
-              <span className="text-3xl">{mode.icon}</span>
-              <span
-                className={`text-sm font-semibold ${
-                  i === 0 ? "text-[#F5A623]" : "text-[#C8D6E5]"
-                }`}
-              >
-                {mode.name}
-              </span>
-            </div>
-          ))}
+        <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto sm:max-w-none sm:grid-cols-2 lg:grid-cols-2">
+          {/* Construction — Pro */}
+          <div className="relative bg-[#d97706]/10 border border-[#d97706]/60 rounded-xl p-6 flex flex-col items-center text-center gap-3 glow-amber">
+            <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-xs font-semibold bg-[#d97706] text-white px-3 py-0.5 rounded-full whitespace-nowrap">
+              Pro
+            </span>
+            <span className="text-4xl">🏗️</span>
+            <span className="text-sm font-semibold text-[#F5A623]">Construction</span>
+            <span className="text-xs text-[#8B9CB3]">50+ trade formulas</span>
+          </div>
+          {/* Plain — Free */}
+          <div className="relative bg-[#1B2838] border border-white/10 rounded-xl p-6 flex flex-col items-center text-center gap-3 hover:border-white/25 transition-colors">
+            <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-xs font-semibold bg-[#243447] text-[#C8D6E5] border border-white/20 px-3 py-0.5 rounded-full whitespace-nowrap">
+              Free
+            </span>
+            <span className="text-4xl">🔢</span>
+            <span className="text-sm font-semibold text-[#C8D6E5]">Plain</span>
+            <span className="text-xs text-[#8B9CB3]">Exact math, always</span>
+          </div>
         </div>
       </div>
     </section>

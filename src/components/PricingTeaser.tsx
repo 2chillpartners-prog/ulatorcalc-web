@@ -2,16 +2,16 @@ import Link from "next/link";
 import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS } from "@/lib/constants";
 
 const freeTier = [
+  "Plain calculator mode",
   "Exact feet-inch-fraction math",
-  "All 11 trade modes",
-  "50+ professional formulas",
   "Running tape & calculation history",
   "Deep-link sharing",
 ];
 
 const proTier = [
   "Everything in Free",
-  "AI assistant with trade knowledge",
+  "Construction mode + 50+ trade formulas",
+  "AI assistant with job-site knowledge",
   "Voice input (Deepgram)",
   "Priority support",
   `${FREE_TRIAL_DAYS}-day free trial — no commitment`,
@@ -26,7 +26,7 @@ export function PricingTeaser() {
             Powerful for free. Unstoppable with Pro.
           </h2>
           <p className="text-[#8B9CB3] text-lg max-w-xl mx-auto">
-            The core calculator is free — no tricks. Pro adds the AI assistant for when you need an expert to think it through with you.
+            Plain calculator is free forever. Upgrade to Pro for Construction mode, 50+ trade formulas, and an AI assistant that knows the job site.
           </p>
         </div>
 
