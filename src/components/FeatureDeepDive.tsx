@@ -1,9 +1,9 @@
 const features = [
   {
-    eyebrow: "50+ Professional Formulas",
-    title: "Every formula you'd reach for, already there.",
-    body: "Stud count, stair risers, board feet, wire gauge, duct sizing, pitch angle — built in and labeled so you can find them in 10 seconds, not 10 minutes of scrolling.",
-    detail: ["Stud / joist / rafter spacing", "Stair rise & run", "Rafter length & pitch", "Board feet & linear feet", "Duct & wire sizing", "Roof area & slope"],
+    eyebrow: "50+ Framing Formulas",
+    title: "Every formula you'd reach for on the job site.",
+    body: "Stud count, stair risers, board feet, rafter length, pitch angle — built in and labeled so you can find them in 10 seconds, not 10 minutes of scrolling.",
+    detail: ["Stud / joist / rafter spacing", "Stair rise & run", "Rafter length & pitch", "Board feet & linear feet", "Roof area & slope", "Wall & floor framing"],
     flip: false,
   },
   {
@@ -22,9 +22,9 @@ const features = [
   },
   {
     eyebrow: "AI Assistant (Pro)",
-    title: "An expert who's been on the job site.",
-    body: "Ask in plain English. Get a step-by-step breakdown with trade-specific context. It's not a chatbot — it's trade knowledge, on demand.",
-    detail: ["Powered by OpenAI", "Voice input via Deepgram", "Knows your active trade mode", "Explains the why, not just the answer"],
+    title: "An AI that's been on the job site.",
+    body: "Ask in plain English. Get a step-by-step framing breakdown — not a generic search result. It's not a chatbot — it's framing knowledge, on demand.",
+    detail: ["Powered by OpenAI", "Voice input via Deepgram", "Knows framing math and terminology", "Explains the why, not just the answer"],
     flip: true,
   },
 ];

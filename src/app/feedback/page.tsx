@@ -1,14 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { SUPPORT_EMAIL, TRADE_MODES } from "@/lib/constants";
+import { SUPPORT_EMAIL } from "@/lib/constants";
 
 const frustrations = [
   "Can't enter feet and inches natively",
-  "No formulas built in",
-  "Too generic — doesn't know my trade",
+  "Missing the framing formulas I need",
+  "Too slow to use on the job site",
   "No calculation history",
   "Can't share calculations with my crew",
+  "Other",
+];
+
+const framingTypes = [
+  "Residential framing",
+  "Commercial framing",
+  "Metal stud framing",
+  "Roof framing",
+  "General contractor",
   "Other",
 ];
 
@@ -59,12 +68,12 @@ export default function FeedbackPage() {
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16">
       <div className="mb-10">
         <span className="text-xs font-semibold uppercase tracking-widest text-[#d97706] mb-3 block">
-          By tradespeople, for tradespeople
+          By framers, for framers
         </span>
         <h1 className="text-4xl font-bold text-white mb-4">Tell us what you need.</h1>
         <p className="text-[#8B9CB3] text-lg leading-relaxed">
-          We built ulator-Calc on a job site. We want to keep improving it with input from
-          the people who actually use it. No spam, no sales — just real product feedback.
+          We built ulator-Calc on a framing job site. We want to keep improving it with input
+          from the people who actually use it. No spam, no sales — just real feedback.
         </p>
       </div>
 
@@ -84,10 +93,10 @@ export default function FeedbackPage() {
           />
         </div>
 
-        {/* Trade */}
+        {/* Framing type */}
         <div>
           <label className="block text-sm font-semibold text-[#C8D6E5] mb-2">
-            What&apos;s your trade? <span className="text-red-400">*</span>
+            What kind of framing do you do? <span className="text-red-400">*</span>
           </label>
           <select
             name="trade"
@@ -96,13 +105,10 @@ export default function FeedbackPage() {
             required
             className="w-full bg-[#1B2838] border border-white/10 rounded-xl px-4 py-3 text-[#C8D6E5] focus:outline-none focus:border-[#d97706]/60 transition-colors text-sm appearance-none"
           >
-            <option value="">Select your trade…</option>
-            {TRADE_MODES.map((m) => (
-              <option key={m.slug} value={m.name}>
-                {m.icon} {m.name}
-              </option>
+            <option value="">Select…</option>
+            {framingTypes.map((t) => (
+              <option key={t} value={t}>{t}</option>
             ))}
-            <option value="Other">Other</option>
           </select>
         </div>
 
@@ -143,7 +149,7 @@ export default function FeedbackPage() {
         {/* Must-have */}
         <div>
           <label className="block text-sm font-semibold text-[#C8D6E5] mb-2">
-            What would make ulator-Calc a must-have for your work?{" "}
+            What would make ulator-Calc a must-have on your job site?{" "}
             <span className="text-red-400">*</span>
           </label>
           <textarea
@@ -152,7 +158,7 @@ export default function FeedbackPage() {
             onChange={handleChange}
             required
             rows={4}
-            placeholder="e.g. A load calculation formula for electrical panels, or a recipe scaling mode that keeps ratios right…"
+            placeholder="e.g. Hip rafter calculations, a faster way to enter stud spacing, or a specific formula I use every day…"
             className="w-full bg-[#1B2838] border border-white/10 rounded-xl px-4 py-3 text-[#C8D6E5] placeholder-[#8B9CB3] focus:outline-none focus:border-[#d97706]/60 transition-colors text-sm resize-none"
           />
         </div>

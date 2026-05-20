@@ -6,11 +6,11 @@ export function ModesGrid() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Your trade. Your calculator.
+            Built for the framing crew.
           </h2>
           <p className="text-[#8B9CB3] text-lg max-w-2xl mx-auto">
-            We want to give every professional the digital tools they need.
-            Built for the job site — with more trade modes on the way.
+            We want to give every framer the digital tools they need.
+            Two focused modes — no bloat, no clutter.
           </p>
         </div>
 

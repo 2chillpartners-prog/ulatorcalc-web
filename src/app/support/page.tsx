@@ -13,12 +13,12 @@ const faqs = [
     a: "The Plain calculator mode is completely free — exact feet-inch-fraction math, running tape, and deep-link sharing. Pro unlocks Construction mode, 50+ professional formulas, the AI assistant, and voice input for $4.99/month or $49.99/year, with a 7-day free trial.",
   },
   {
-    q: "What trade modes are available?",
-    a: "Plain mode is free. Construction mode — with 50+ professional formulas for studs, stairs, rafters, board feet, and more — is included with Pro. More trade modes are in development.",
+    q: "What calculator modes are available?",
+    a: "Plain mode is free. Construction mode — purpose-built for framers, with 50+ formulas for studs, stairs, rafters, board feet, roof area, and more — is included with Pro.",
   },
   {
     q: "How does the AI assistant work?",
-    a: "The AI assistant is a Pro feature powered by OpenAI. Ask it questions in plain English — like 'How many studs for a 20-foot wall on 16-inch centers?' — and it will walk you through the answer step by step with trade context. Voice input is powered by Deepgram.",
+    a: "The AI assistant is a Pro feature powered by OpenAI. Ask it questions in plain English — like 'How many studs for a 20-foot wall on 16-inch centers?' — and it walks you through the answer step by step with framing context. Voice input is powered by Deepgram.",
   },
   {
     q: "What data does the AI use?",

@@ -7,7 +7,7 @@ export const SITE_URL = "https://ulatorcalc.com";
 export const APP_NAME = "ulator-Calc";
 export const TAGLINE = "The calculator built for your trade.";
 export const TAGLINE_SUB =
-  "Exact feet, inches, and fractions — plus an AI assistant built for the job site. Construction and Plain modes, with more trades coming.";
+  "Exact feet, inches, and fractions — built by framers for framers. The digital tool every framing crew deserves.";
 
 export const TRADE_MODES = [
   { name: "Construction", icon: "🏗️", slug: "construction" },

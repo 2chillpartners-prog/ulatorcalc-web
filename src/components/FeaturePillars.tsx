@@ -15,9 +15,9 @@ const pillars = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
       </svg>
     ),
-    title: "Purpose-built modes",
+    title: "Built for framers",
     description:
-      "Construction and Plain modes today — with more trades coming. Each mode surfaces the right formulas and units for the way you actually work.",
+      "Construction mode is purpose-built for framing crews — studs, rafters, stairs, board feet, and more. Plain mode handles the everyday math.",
   },
   {
     icon: (
@@ -25,7 +25,7 @@ const pillars = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
       </svg>
     ),
-    title: "AI that knows your trade",
+    title: "AI that knows framing",
     description:
       "Ask it \"How many studs for a 14-foot wall on 16-inch centers?\" and get a step-by-step breakdown — not a generic search result. Pro feature.",
   },
