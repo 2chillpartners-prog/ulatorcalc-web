@@ -63,42 +63,18 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* App screenshots — calculate + convert feature flow */}
+        {/* App screenshot */}
         <div className="mt-16 flex justify-center">
-          <div className="relative flex items-start justify-center">
-            {/* Ambient glow */}
-            <div className="absolute inset-0 bg-[#d97706]/15 rounded-[3rem] blur-3xl scale-75" aria-hidden="true" />
-
-            {/* Second screenshot (convert result) — behind, offset right */}
-            <div className="relative mt-8 -mr-8 z-0">
-              <Image
-                src="/screenshot-convert.png"
-                alt="ulator-Calc showing unit conversion: 8.865 m, 886.5 cm, 8865 mm, 9.69 yd"
-                width={240}
-                height={519}
-                className="rounded-[2rem] shadow-xl border border-white/10 w-[200px] sm:w-[240px] h-auto opacity-90"
-              />
-              {/* Label */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-semibold text-[#8B9CB3] text-center">
-                Instant conversion
-              </div>
-            </div>
-
-            {/* First screenshot (calculation) — front, offset left */}
-            <div className="relative z-10 -ml-8">
-              <Image
-                src="/screenshot-calculate.png"
-                alt="ulator-Calc construction mode: 15ft 7in + 13ft 6in = 29ft 1in with tap to convert"
-                width={260}
-                height={562}
-                className="rounded-[2rem] shadow-2xl border border-[#d97706]/30 w-[220px] sm:w-[260px] h-auto"
-                priority
-              />
-              {/* Label */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-semibold text-[#d97706] text-center">
-                Exact framing math
-              </div>
-            </div>
+          <div className="relative w-[280px] sm:w-[320px]">
+            <div className="absolute inset-0 scale-90 bg-[#d97706]/20 rounded-[3rem] blur-2xl" aria-hidden="true" />
+            <Image
+              src="/app-screenshot.png"
+              alt="ulator-Calc construction mode showing fractions, running tape, and unit conversions"
+              width={320}
+              height={693}
+              className="relative rounded-[2.5rem] shadow-2xl border border-white/10 w-full h-auto"
+              priority
+            />
           </div>
         </div>
       </div>
