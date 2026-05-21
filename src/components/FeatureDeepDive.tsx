@@ -9,7 +9,7 @@ const features = [
   {
     eyebrow: "Running Tape & History",
     title: "Never lose a number mid-job.",
-    body: "Every calculation goes on the tape. Scroll back, reuse values, and share your full work — not just the answer. Built like a paper tape but smarter.",
+    body: "Every calculation is saved as you go. Scroll back, reuse values, and share your full work — not just the answer.",
     detail: ["Scrollable calculation history", "Tap any past result to reuse it", "Share full tape as text", "Undo / redo at any point"],
     flip: true,
   },
