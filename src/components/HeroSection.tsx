@@ -15,8 +15,8 @@ export function HeroSection() {
       <div className="relative max-w-6xl mx-auto">
         {/* By framers badge */}
         <div className="flex justify-center mb-8">
-          <span className="inline-flex items-center gap-2 bg-[#d97706]/15 text-[#F5A623] text-sm font-semibold px-4 py-1.5 rounded-full border border-[#d97706]/30 tracking-wide">
-            <span>🔨</span> By framers, for framers
+          <span className="inline-flex items-center gap-3 bg-[#d97706]/15 text-[#F5A623] text-[1.75rem] font-semibold px-6 py-2.5 rounded-full border border-[#d97706]/30 tracking-wide">
+            <span>🔨</span> By Framers, For Framers
           </span>
         </div>
 
