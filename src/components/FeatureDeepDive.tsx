@@ -21,6 +21,13 @@ const features = [
     flip: false,
   },
   {
+    eyebrow: "8 Languages",
+    title: "Your crew. Your language.",
+    body: "The full app runs in 8 languages — not just numbers, but menus, labels, and the interface your crew actually reads. Switch in settings; no extra download.",
+    detail: ["8 languages built in", "Full interface translation", "Switch anytime in settings", "Plain and Construction modes"],
+    flip: true,
+  },
+  {
     eyebrow: "AI Assistant (Pro)",
     title: "An AI that's been on the job site.",
     body: "Ask in plain English. Get a step-by-step construction breakdown — framing counts, concrete volumes, whatever you need. Not a chatbot — construction knowledge, on demand.",

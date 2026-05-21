@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SUPPORT_EMAIL, APP_NAME } from "@/lib/constants";
+import { SUPPORT_EMAIL, APP_NAME, LANGUAGE_COUNT } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -27,6 +27,10 @@ const faqs = [
   {
     q: "How do I share a calculation?",
     a: "Tap the share icon on any result. It generates a deep link that opens the exact calculation in ulator-Calc on any iOS device — no account required.",
+  },
+  {
+    q: "What languages does ulator-Calc support?",
+    a: `The app runs in ${LANGUAGE_COUNT} languages. Open Settings in the app to switch — menus, buttons, and labels update across Plain and Construction modes. No extra download required.`,
   },
   {
     q: "How do I cancel my Pro subscription?",

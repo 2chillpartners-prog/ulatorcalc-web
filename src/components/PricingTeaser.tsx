@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
 
 const freeTier = [
   "Plain calculator mode",
   "Running tape & calculation history",
   "Deep-link sharing",
+  `${LANGUAGE_COUNT} languages — full app interface`,
 ];
 
 const proTier = [

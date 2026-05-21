@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -11,6 +11,7 @@ const comparison = [
   { feature: "Exact feet-inch-fraction math", free: false, pro: true },
   { feature: "Running tape & calculation history", free: true, pro: true },
   { feature: "Deep-link sharing", free: true, pro: true },
+  { feature: `${LANGUAGE_COUNT} languages — full app interface`, free: true, pro: true },
   { feature: "Construction mode (framing + concrete)", free: false, pro: true },
   { feature: "50+ construction formulas", free: false, pro: true },
   { feature: "AI assistant (construction-aware)", free: false, pro: true },

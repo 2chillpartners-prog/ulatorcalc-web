@@ -29,6 +29,16 @@ const pillars = [
     description:
       "Ask it \"How many studs for a 14-foot wall on 16-inch centers?\" or \"How much concrete for a 12x20 slab at 4 inches?\" and get a step-by-step breakdown. Pro feature.",
   },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+      </svg>
+    ),
+    title: "8 languages",
+    description:
+      "Run the full app in your language — menus, buttons, and labels included. Switch anytime in settings. Built for crews who work in more than one language on site.",
+  },
 ];
 
 export function FeaturePillars() {
@@ -44,7 +54,7 @@ export function FeaturePillars() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((p) => (
             <div
               key={p.title}
