@@ -32,7 +32,7 @@ const features = [
     title: "An AI that's been on the job site.",
     body: "Ask in plain English. Get a step-by-step construction breakdown — framing counts, concrete volumes, whatever you need. Not a chatbot — construction knowledge, on demand.",
     detail: ["Powered by OpenAI", "Voice input via Deepgram", "Knows framing and concrete math", "Explains the why, not just the answer"],
-    flip: true,
+    flip: false,
   },
 ];
 
