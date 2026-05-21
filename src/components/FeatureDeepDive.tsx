@@ -2,7 +2,7 @@ const features = [
   {
     eyebrow: "50+ Construction Formulas",
     title: "Every formula you'd reach for on the job site.",
-    body: "Whether you're framing or pouring — stud counts, rafter lengths, concrete volume, footing sizes — built in and ready instantly, not buried after 10 minutes of scrolling.",
+    body: "Whether you're framing or pouring — stud counts, rafter lengths, concrete volume, footing sizes — built in and ready instantly, with visible calculations and history for reference.",
     detail: ["Stud / joist / rafter spacing", "Stair rise & run", "Rafter length & pitch", "Rake walls", "Concrete volume & slabs", "Footing & column sizing"],
     flip: false,
   },
