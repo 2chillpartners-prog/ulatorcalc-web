@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { SUPPORT_EMAIL } from "@/lib/constants";
 
 const frustrations = [
   "Can't enter feet and inches natively",
@@ -25,6 +24,8 @@ const constructionTypes = [
 
 export default function FeedbackPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [form, setForm] = useState({
     name: "",
     trade: "",
@@ -39,14 +40,30 @@ export default function FeedbackPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`ulator-Calc Feedback — ${form.trade || "General"}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name || "Anonymous"}\nTrade: ${form.trade}\n\nBiggest frustration:\n${form.frustration}\n\nMust-have feature:\n${form.mustHave}\n\nReply email: ${form.email || "not provided"}`
-    );
-    window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setSubmitError("");
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const data = (await res.json()) as { error?: string };
+        setSubmitError(data.error ?? "Unable to send feedback. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Unable to send feedback. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -55,12 +72,8 @@ export default function FeedbackPage() {
         <div className="text-5xl mb-6">🔨</div>
         <h1 className="text-3xl font-bold text-white mb-4">Thanks — we&apos;re listening.</h1>
         <p className="text-[#8B9CB3] text-lg">
-          Your email app should have opened with your feedback pre-filled. If it didn&apos;t,
-          you can reach us directly at{" "}
-          <a href={`mailto:${SUPPORT_EMAIL}`} className="text-[#d97706] hover:underline">
-            {SUPPORT_EMAIL}
-          </a>
-          .
+          Thanks for helping us build a better calculator for the job site.
+          If you left your email, we&apos;ll reach out when your feature ships.
         </p>
       </div>
     );
@@ -182,13 +195,18 @@ export default function FeedbackPage() {
 
         <button
           type="submit"
-          className="w-full bg-[#d97706] hover:bg-[#F5A623] text-white font-bold py-4 rounded-xl text-sm transition-all shadow-lg shadow-[#d97706]/25 hover:shadow-[#d97706]/40 hover:-translate-y-0.5"
+          disabled={submitting}
+          className="w-full bg-[#d97706] hover:bg-[#F5A623] disabled:opacity-60 text-white font-bold py-4 rounded-xl text-sm transition-all shadow-lg shadow-[#d97706]/25 hover:shadow-[#d97706]/40 hover:-translate-y-0.5"
         >
-          Send Feedback
+          {submitting ? "Sending…" : "Send Feedback"}
         </button>
 
+        {submitError && (
+          <p className="text-center text-red-400 text-sm">{submitError}</p>
+        )}
+
         <p className="text-center text-[#8B9CB3] text-xs">
-          This opens your email app with your feedback pre-filled. No account needed.
+          Your feedback is saved securely. No account needed.
         </p>
       </form>
     </div>

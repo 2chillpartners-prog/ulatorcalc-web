@@ -3,6 +3,9 @@ module.exports = {
   siteUrl: process.env.SITE_URL || "https://ulatorcalc.com",
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    policies: [{ userAgent: "*", allow: "/" }],
+    policies: [
+      { userAgent: "*", allow: "/" },
+      { userAgent: "*", disallow: ["/admin", "/api/admin"] },
+    ],
   },
 };

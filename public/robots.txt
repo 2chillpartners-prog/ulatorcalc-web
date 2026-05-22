@@ -2,6 +2,11 @@
 User-agent: *
 Allow: /
 
+# *
+User-agent: *
+Disallow: /admin
+Disallow: /api/admin
+
 # Host
 Host: https://ulatorcalc.com
 

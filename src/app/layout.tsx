@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
+import { SiteChrome } from "@/components/SiteChrome";
 import { APP_NAME, TAGLINE, SITE_URL } from "@/lib/constants";
 
 const dmSans = DM_Sans({
@@ -43,9 +42,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#0D1B2A] text-[#C8D6E5] antialiased">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
