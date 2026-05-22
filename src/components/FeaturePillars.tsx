@@ -12,12 +12,12 @@ const pillars = [
   {
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
       </svg>
     ),
-    title: "Built for construction",
+    title: "Visual formula output",
     description:
-      "Construction mode covers the whole job site — studs, rafters, stairs, board feet for framers; slabs, footings, and volume for concrete crews. Plain mode handles everything else.",
+      "Wall layouts with every stud labeled — kings, trimmers, cripples, and plates color-coded. Add notes and share the diagram with your crew. Not just a number.",
   },
   {
     icon: (
@@ -54,7 +54,7 @@ export function FeaturePillars() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {pillars.map((p) => (
             <div
               key={p.title}
