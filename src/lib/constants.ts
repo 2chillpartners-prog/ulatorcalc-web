@@ -2,7 +2,7 @@ export const APP_STORE_URL =
   "https://apps.apple.com/app/calc-pal/id6759688305";
 export const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.ulatorcalc"; // TODO: update with real Play Store URL
-export const SUPPORT_EMAIL = "support@ulatorcalc.com";
+export const SUPPORT_EMAIL = "support@toolbeltlogic.com";
 export const SITE_URL = "https://www.toolbeltlogic.com";
 export const APP_NAME = "ulator-Calc";
 export const TAGLINE = "The calculator built for your trade.";
