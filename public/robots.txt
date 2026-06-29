@@ -8,7 +8,7 @@ Disallow: /admin
 Disallow: /api/admin
 
 # Host
-Host: https://ulatorcalc.com
+Host: https://www.toolbeltlogic.com
 
 # Sitemaps
-Sitemap: https://ulatorcalc.com/sitemap.xml
+Sitemap: https://www.toolbeltlogic.com/sitemap.xml
