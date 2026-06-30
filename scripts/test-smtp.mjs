@@ -2,6 +2,9 @@ import nodemailer from "nodemailer";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
+const M365_HOST = "smtp.office365.com";
+const GODADDY_HOST = "smtpout.secureserver.net";
+
 function loadEnvLocal() {
   try {
     const raw = readFileSync(resolve(".env.local"), "utf-8");
@@ -21,19 +24,19 @@ function loadEnvLocal() {
 
 loadEnvLocal();
 
-const host = process.env.SMTP_HOST?.trim();
+const host = process.env.SMTP_HOST?.trim() || M365_HOST;
 const user = process.env.SMTP_USER?.trim();
 const pass = process.env.SMTP_PASS?.trim();
 const port = Number(process.env.SMTP_PORT?.trim() || 587);
 
-if (!host || !user || !pass) {
-  console.error("Missing SMTP_HOST, SMTP_USER, or SMTP_PASS in .env.local or environment.");
+if (!user || !pass) {
+  console.error("Missing SMTP_USER or SMTP_PASS in .env.local or environment.");
   process.exit(1);
 }
 
-async function trySend(testPort: number) {
+async function trySend(testHost, testPort) {
   const transporter = nodemailer.createTransport({
-    host,
+    host: testHost,
     port: testPort,
     secure: testPort === 465,
     requireTLS: testPort === 587,
@@ -44,9 +47,9 @@ async function trySend(testPort: number) {
     tls: { minVersion: "TLSv1.2" },
   });
 
-  console.log(`Testing ${host}:${testPort}...`);
+  console.log(`Testing ${testHost}:${testPort}...`);
   await transporter.verify();
-  console.log(`  verify OK`);
+  console.log("  verify OK");
 
   await transporter.sendMail({
     from: `SMTP Test <${user}>`,
@@ -54,26 +57,43 @@ async function trySend(testPort: number) {
     subject: "ulator-Calc SMTP test",
     text: "If you received this, SMTP is working.",
   });
-  console.log(`  send OK`);
+  console.log("  send OK");
 }
 
 async function main() {
-  const ports = port === 587 || port === 465 ? [port, port === 587 ? 465 : 587] : [587, 465];
+  const hosts =
+    host === GODADDY_HOST
+      ? [host, M365_HOST]
+      : host === M365_HOST
+        ? [host]
+        : [host, M365_HOST, GODADDY_HOST];
 
-  for (const testPort of ports) {
-    try {
-      await trySend(testPort);
-      console.log(`\nSuccess on port ${testPort}. Use SMTP_PORT=${testPort} in Vercel.`);
-      return;
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      console.error(`  failed: ${message}\n`);
+  for (const testHost of [...new Set(hosts)]) {
+    const ports =
+      testHost === M365_HOST
+        ? [587]
+        : port === 587 || port === 465
+          ? [port, port === 587 ? 465 : 587]
+          : [587, 465];
+
+    for (const testPort of ports) {
+      try {
+        await trySend(testHost, testPort);
+        console.log(
+          `\nSuccess on ${testHost}:${testPort}. Use SMTP_HOST=${testHost} and SMTP_PORT=${testPort} in Vercel.`
+        );
+        return;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        console.error(`  failed: ${message}\n`);
+      }
     }
   }
 
-  console.error("All SMTP attempts failed. Check password and GoDaddy mailbox type.");
-  console.error("GoDaddy Workspace: smtpout.secureserver.net");
-  console.error("Microsoft 365 via GoDaddy: smtp.office365.com port 587");
+  console.error("All SMTP attempts failed.");
+  console.error("Microsoft 365: smtp.office365.com port 587");
+  console.error("GoDaddy Workspace: smtpout.secureserver.net port 587");
+  console.error("If MFA is enabled, create an app password in Microsoft 365.");
   process.exit(1);
 }
 

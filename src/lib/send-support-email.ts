@@ -5,15 +5,19 @@ import type { FeedbackInput } from "@/lib/types/feedback";
 
 type SmtpOptions = SMTPTransport.Options;
 
+const M365_HOST = "smtp.office365.com";
+const GODADDY_HOST = "smtpout.secureserver.net";
+const DEFAULT_HOST = M365_HOST;
+const DEFAULT_PORT = 587;
+
 function env(name: string): string | undefined {
   return process.env[name]?.trim() || undefined;
 }
 
-function buildTransportOptions(port: number): SmtpOptions | null {
-  const host = env("SMTP_HOST");
+function buildTransportOptions(host: string, port: number): SmtpOptions | null {
   const user = env("SMTP_USER");
   const pass = env("SMTP_PASS");
-  if (!host || !user || !pass) return null;
+  if (!user || !pass) return null;
 
   return {
     host,
@@ -28,29 +32,53 @@ function buildTransportOptions(port: number): SmtpOptions | null {
   };
 }
 
+function getConfiguredHost(): string {
+  return env("SMTP_HOST") || DEFAULT_HOST;
+}
+
 function getConfiguredPort(): number {
-  const port = Number(env("SMTP_PORT") || 587);
-  return Number.isFinite(port) ? port : 587;
+  const port = Number(env("SMTP_PORT") || DEFAULT_PORT);
+  return Number.isFinite(port) ? port : DEFAULT_PORT;
 }
 
 export function isSupportEmailConfigured(): boolean {
-  return buildTransportOptions(getConfiguredPort()) !== null;
+  return buildTransportOptions(getConfiguredHost(), getConfiguredPort()) !== null;
+}
+
+function getHostAttempts(): string[] {
+  const configured = getConfiguredHost();
+  const hosts = [configured];
+
+  if (configured === GODADDY_HOST) hosts.push(M365_HOST);
+  if (configured === M365_HOST) hosts.push(GODADDY_HOST);
+
+  return [...new Set(hosts)];
+}
+
+function getPortAttempts(host: string, primaryPort: number): number[] {
+  if (host === M365_HOST) return [587];
+
+  if (primaryPort === 587 || primaryPort === 465) {
+    return primaryPort === 587 ? [587, 465] : [465, 587];
+  }
+
+  return [587, 465];
 }
 
 function getTransportAttempts(): SmtpOptions[] {
   const primaryPort = getConfiguredPort();
   const attempts: SmtpOptions[] = [];
 
-  const primary = buildTransportOptions(primaryPort);
-  if (primary) attempts.push(primary);
+  for (const host of getHostAttempts()) {
+    for (const port of getPortAttempts(host, primaryPort)) {
+      const options = buildTransportOptions(host, port);
+      if (!options) continue;
 
-  const alternatePort = primaryPort === 465 ? 587 : 465;
-  const alternate = buildTransportOptions(alternatePort);
-  if (alternate && alternatePort !== primaryPort) {
-    const alreadyIncluded = attempts.some(
-      (options) => options.port === alternate.port && options.host === alternate.host
-    );
-    if (!alreadyIncluded) attempts.push(alternate);
+      const duplicate = attempts.some(
+        (existing) => existing.host === options.host && existing.port === options.port
+      );
+      if (!duplicate) attempts.push(options);
+    }
   }
 
   return attempts;
