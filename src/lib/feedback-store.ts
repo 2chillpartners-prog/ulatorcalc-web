@@ -41,8 +41,8 @@ export async function listFeedback(): Promise<FeedbackEntry[]> {
   );
 }
 
-export async function addFeedback(input: FeedbackInput): Promise<FeedbackEntry> {
-  const entry: FeedbackEntry = {
+export function createFeedbackEntry(input: FeedbackInput): FeedbackEntry {
+  return {
     id: crypto.randomUUID(),
     createdAt: new Date().toISOString(),
     name: input.name?.trim() || undefined,
@@ -51,17 +51,29 @@ export async function addFeedback(input: FeedbackInput): Promise<FeedbackEntry> 
     mustHave: input.mustHave.trim(),
     email: input.email?.trim() || undefined,
   };
+}
 
+function canUseLocalStorage(): boolean {
+  return !process.env.VERCEL && getRedis() === null;
+}
+
+export async function saveFeedbackEntry(entry: FeedbackEntry): Promise<void> {
   const redis = getRedis();
   if (redis) {
     const existing = (await redis.get<FeedbackEntry[]>(FEEDBACK_KEY)) ?? [];
-    const updated = [entry, ...existing];
-    await redis.set(FEEDBACK_KEY, updated);
-    return entry;
+    await redis.set(FEEDBACK_KEY, [entry, ...existing]);
+    return;
   }
+
+  if (!canUseLocalStorage()) return;
 
   const existing = await readLocalFeedback();
   existing.unshift(entry);
   await writeLocalFeedback(existing);
+}
+
+export async function addFeedback(input: FeedbackInput): Promise<FeedbackEntry> {
+  const entry = createFeedbackEntry(input);
+  await saveFeedbackEntry(entry);
   return entry;
 }

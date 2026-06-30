@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
-import { addFeedback } from "@/lib/feedback-store";
-import { sendFeedbackNotification } from "@/lib/send-support-email";
+import { createFeedbackEntry, saveFeedbackEntry } from "@/lib/feedback-store";
+import {
+  isSupportEmailConfigured,
+  sendFeedbackNotification,
+} from "@/lib/send-support-email";
 import type { FeedbackInput } from "@/lib/types/feedback";
 
 export async function POST(request: Request) {
@@ -14,19 +17,40 @@ export async function POST(request: Request) {
       );
     }
 
-    const entry = await addFeedback(body);
+    if (!isSupportEmailConfigured()) {
+      console.error("Feedback rejected: SMTP is not configured.");
+      return NextResponse.json(
+        {
+          error:
+            "Feedback email is not configured yet. Please email support@toolbeltlogic.com directly.",
+        },
+        { status: 503 }
+      );
+    }
+
+    const entry = createFeedbackEntry(body);
 
     try {
       await sendFeedbackNotification(entry);
     } catch (emailError) {
-      console.error("Feedback saved but email notification failed:", emailError);
+      console.error("Failed to send feedback email:", emailError);
+      return NextResponse.json(
+        { error: "Unable to send feedback right now. Please try again." },
+        { status: 500 }
+      );
+    }
+
+    try {
+      await saveFeedbackEntry(entry);
+    } catch (storageError) {
+      console.warn("Feedback emailed but storage failed:", storageError);
     }
 
     return NextResponse.json({ ok: true, id: entry.id });
   } catch (error) {
-    console.error("Failed to save feedback:", error);
+    console.error("Failed to process feedback:", error);
     return NextResponse.json(
-      { error: "Unable to save feedback right now. Please try again." },
+      { error: "Unable to send feedback right now. Please try again." },
       { status: 500 }
     );
   }
