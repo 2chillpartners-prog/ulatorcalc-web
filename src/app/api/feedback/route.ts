@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { createFeedbackEntry, saveFeedbackEntry } from "@/lib/feedback-store";
 import {
   isSupportEmailConfigured,
   sendFeedbackNotification,
@@ -28,27 +27,11 @@ export async function POST(request: Request) {
       );
     }
 
-    const entry = createFeedbackEntry(body);
+    await sendFeedbackNotification(body);
 
-    try {
-      await sendFeedbackNotification(entry);
-    } catch (emailError) {
-      console.error("Failed to send feedback email:", emailError);
-      return NextResponse.json(
-        { error: "Unable to send feedback right now. Please try again." },
-        { status: 500 }
-      );
-    }
-
-    try {
-      await saveFeedbackEntry(entry);
-    } catch (storageError) {
-      console.warn("Feedback emailed but storage failed:", storageError);
-    }
-
-    return NextResponse.json({ ok: true, id: entry.id });
+    return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error("Failed to process feedback:", error);
+    console.error("Failed to send feedback email:", error);
     return NextResponse.json(
       { error: "Unable to send feedback right now. Please try again." },
       { status: 500 }

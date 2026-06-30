@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@next/font": "^14.2.15",
-    "@upstash/redis": "^1.38.0",
-    "jose": "^6.2.3",
     "next": "16.2.6",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^9.0.1",
