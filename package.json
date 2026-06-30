@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next-sitemap",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:smtp": "node scripts/test-smtp.mjs"
   },
   "dependencies": {
     "@next/font": "^14.2.15",
