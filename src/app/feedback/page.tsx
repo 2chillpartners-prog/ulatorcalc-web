@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { SUPPORT_EMAIL } from "@/lib/constants";
 
 const frustrations = [
   "Can't enter feet and inches natively",
@@ -71,9 +72,15 @@ export default function FeedbackPage() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-24 text-center">
         <div className="text-5xl mb-6">🔨</div>
         <h1 className="text-3xl font-bold text-white mb-4">Thanks — we&apos;re listening.</h1>
-        <p className="text-[#8B9CB3] text-lg">
+        <p className="text-[#8B9CB3] text-lg mb-4">
           Thanks for helping us build a better calculator for the job site.
           If you left your email, we&apos;ll reach out when your feature ships.
+        </p>
+        <p className="text-[#8B9CB3] text-sm">
+          Questions?{" "}
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="text-[#d97706] hover:underline">
+            {SUPPORT_EMAIL}
+          </a>
         </p>
       </div>
     );
@@ -89,6 +96,12 @@ export default function FeedbackPage() {
         <p className="text-[#8B9CB3] text-lg leading-relaxed">
           We built ulator-Calc on construction job sites — framing crews and concrete workers.
           We want to keep improving it with input from the people who actually use it. No spam, no sales — just real feedback.
+        </p>
+        <p className="text-[#8B9CB3] text-sm mt-3">
+          Prefer email?{" "}
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="text-[#d97706] hover:underline">
+            {SUPPORT_EMAIL}
+          </a>
         </p>
       </div>
 

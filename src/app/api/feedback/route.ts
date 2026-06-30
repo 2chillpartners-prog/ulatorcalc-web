@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { addFeedback } from "@/lib/feedback-store";
+import { sendFeedbackNotification } from "@/lib/send-support-email";
 import type { FeedbackInput } from "@/lib/types/feedback";
 
 export async function POST(request: Request) {
@@ -14,6 +15,13 @@ export async function POST(request: Request) {
     }
 
     const entry = await addFeedback(body);
+
+    try {
+      await sendFeedbackNotification(entry);
+    } catch (emailError) {
+      console.error("Feedback saved but email notification failed:", emailError);
+    }
+
     return NextResponse.json({ ok: true, id: entry.id });
   } catch (error) {
     console.error("Failed to save feedback:", error);
