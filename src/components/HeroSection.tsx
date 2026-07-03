@@ -69,7 +69,7 @@ export function HeroSection() {
             <div className="absolute inset-0 scale-90 bg-[#d97706]/20 rounded-[3rem] blur-2xl" aria-hidden="true" />
             <Image
               src="/app-screenshot.png"
-              alt="ulator-Calc construction mode showing fractions, running tape, and unit conversions"
+              alt="TB Logic construction mode showing fractions, running tape, and unit conversions"
               width={320}
               height={693}
               className="relative rounded-[2.5rem] shadow-2xl border border-white/10 w-full h-auto"

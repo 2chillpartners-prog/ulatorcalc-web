@@ -13,7 +13,7 @@ export function FeedbackSection() {
           Tell us what you need.
         </h2>
         <p className="text-[#8B9CB3] text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          ulator-Calc was built by construction workers — framers and concrete crews alike.
+          TB Logic was built by construction workers — framers and concrete crews alike.
           If there&apos;s a formula or feature that would save you time on the job, we want to hear it.
         </p>
 

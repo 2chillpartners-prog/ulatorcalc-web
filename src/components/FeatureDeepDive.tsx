@@ -32,7 +32,7 @@ const features: Feature[] = [
     ],
     flip: true,
     image: "/screenshot-formula-output.png",
-    imageAlt: "ulator-Calc wall layout formula showing 43 studs at 16 inch OC with color-coded stud types and labeled lengths",
+    imageAlt: "TB Logic wall layout formula showing 43 studs at 16 inch OC with color-coded stud types and labeled lengths",
     imageCaption: "Wall layout — every stud length, opening, and plate labeled",
   },
   {

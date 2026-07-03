@@ -95,7 +95,7 @@ export async function sendFeedbackNotification(input: FeedbackInput): Promise<bo
   const email = input.email?.trim() || undefined;
 
   const fromAddress = env("SMTP_FROM") || env("SMTP_USER")!;
-  const from = `ulator-Calc Website <${fromAddress}>`;
+  const from = `TB Logic Website <${fromAddress}>`;
 
   const lines = [
     `New feedback from ${name || "Anonymous"}`,
@@ -115,7 +115,7 @@ export async function sendFeedbackNotification(input: FeedbackInput): Promise<bo
     from,
     to: SUPPORT_EMAIL,
     replyTo: email,
-    subject: `ulator-Calc Feedback — ${trade}`,
+    subject: `TB Logic Feedback — ${trade}`,
     text: lines.join("\n"),
   };
 

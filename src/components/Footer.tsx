@@ -17,8 +17,8 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="font-bold text-lg mb-1">
-              <span className="text-[#d97706] font-mono">ulator</span>
-              <span className="text-[#C8D6E5]">-Calc</span>
+              <span className="text-[#d97706] font-mono">TB</span>
+              <span className="text-[#C8D6E5]">Logic</span>
             </div>
             <p className="text-[#8B9CB3] text-sm">
               Built by framers, for framers.

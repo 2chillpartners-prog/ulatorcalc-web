@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { APP_STORE_URL, APP_NAME } from "@/lib/constants";
+import { APP_STORE_URL } from "@/lib/constants";
 
 const links = [
   { href: "/#features", label: "Features" },
@@ -19,8 +19,8 @@ export function Nav() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight">
-          <span className="text-[#d97706] font-mono">ulator</span>
-          <span className="text-[#C8D6E5]">-Calc</span>
+          <span className="text-[#d97706] font-mono">TB</span>
+          <span className="text-[#C8D6E5]">Logic</span>
         </Link>
 
         {/* Desktop nav */}

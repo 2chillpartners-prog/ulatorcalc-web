@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SUPPORT_EMAIL } from "@/lib/constants";
+import { SUPPORT_EMAIL, APP_NAME } from "@/lib/constants";
 
 const frustrations = [
   "Can't enter feet and inches natively",
@@ -94,7 +94,7 @@ export default function FeedbackPage() {
         </span>
         <h1 className="text-4xl font-bold text-white mb-4">Tell us what you need.</h1>
         <p className="text-[#8B9CB3] text-lg leading-relaxed">
-          We built ulator-Calc on construction job sites — framing crews and concrete workers.
+          We built {APP_NAME} on construction job sites — framing crews and concrete workers.
           We want to keep improving it with input from the people who actually use it. No spam, no sales — just real feedback.
         </p>
         <p className="text-[#8B9CB3] text-sm mt-3">
@@ -177,7 +177,7 @@ export default function FeedbackPage() {
         {/* Must-have */}
         <div>
           <label className="block text-sm font-semibold text-[#C8D6E5] mb-2">
-            What would make ulator-Calc a must-have on your job site?{" "}
+            What would make {APP_NAME} a must-have on your job site?{" "}
             <span className="text-red-400">*</span>
           </label>
           <textarea

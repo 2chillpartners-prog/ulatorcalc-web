@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: "Is ulator-Calc free?",
+    q: `Is ${APP_NAME} free?`,
     a: "The Plain calculator mode is completely free — exact feet-inch-fraction math, running tape, and deep-link sharing. Pro unlocks Construction mode, 50+ professional formulas, the AI assistant, and voice input for $4.99/month or $49.99/year, with a 7-day free trial.",
   },
   {
@@ -26,23 +26,23 @@ const faqs = [
   },
   {
     q: "How do I share a calculation?",
-    a: "Tap the share icon on any result. It generates a deep link that opens the exact calculation in ulator-Calc on any iOS device — no account required.",
+    a: `Tap the share icon on any result. It generates a deep link that opens the exact calculation in ${APP_NAME} on any iOS device — no account required.`,
   },
   {
-    q: "What languages does ulator-Calc support?",
+    q: `What languages does ${APP_NAME} support?`,
     a: `The app runs in ${LANGUAGE_COUNT} languages. Open Settings in the app to switch — menus, buttons, and labels update across Plain and Construction modes. No extra download required.`,
   },
   {
     q: "How do I cancel my Pro subscription?",
-    a: "Subscriptions are managed through Apple. Go to Settings → Apple ID → Subscriptions → ulator-Calc and tap Cancel. You keep Pro access until the end of your billing period.",
+    a: `Subscriptions are managed through Apple. Go to Settings → Apple ID → Subscriptions → ${APP_NAME} and tap Cancel. You keep Pro access until the end of your billing period.`,
   },
   {
     q: "I found a bug or the app crashed. What should I do?",
     a: `Email us at ${SUPPORT_EMAIL} with a description of what happened and your iOS version. We typically respond within one business day.`,
   },
   {
-    q: "Is ulator-Calc available on Android?",
-    a: "Yes — ulator-Calc is available on both iOS (App Store) and Android (Google Play). Download free on either platform.",
+    q: `Is ${APP_NAME} available on Android?`,
+    a: `Yes — ${APP_NAME} is available on both iOS (App Store) and Android (Google Play). Download free on either platform.`,
   },
 ];
 

@@ -9,13 +9,11 @@ export const metadata: Metadata = {
 const steps = [
   {
     title: "Calculation history",
-    description:
-      "Your calculations are stored only on your device. Open ulator-Calc → Settings → Clear History. This permanently removes all local data.",
+    description: `Your calculations are stored only on your device. Open ${APP_NAME} → Settings → Clear History. This permanently removes all local data.`,
   },
   {
     title: "Pro subscription",
-    description:
-      "Subscriptions are managed by Apple. Go to iPhone Settings → Apple ID → Subscriptions → ulator-Calc → Cancel Subscription. This does not delete your data, just stops billing.",
+    description: `Subscriptions are managed by Apple. Go to iPhone Settings → Apple ID → Subscriptions → ${APP_NAME} → Cancel Subscription. This does not delete your data, just stops billing.`,
   },
   {
     title: "Request full account deletion",

@@ -54,7 +54,7 @@ async function trySend(testHost, testPort) {
   await transporter.sendMail({
     from: `SMTP Test <${user}>`,
     to: user,
-    subject: "ulator-Calc SMTP test",
+    subject: "TB Logic SMTP test",
     text: "If you received this, SMTP is working.",
   });
   console.log("  send OK");
