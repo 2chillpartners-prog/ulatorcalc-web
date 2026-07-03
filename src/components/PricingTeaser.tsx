@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
 
 const freeTier = [
   "Plain calculator mode",
@@ -68,7 +68,7 @@ export function PricingTeaser() {
               <span className="text-[#F5A623] text-sm font-semibold uppercase tracking-widest block mb-2">Pro</span>
               <span className="text-4xl font-bold text-white">{PRO_MONTHLY}</span>
               <span className="text-[#8B9CB3] text-sm ml-1">/month</span>
-              <div className="text-[#8B9CB3] text-sm mt-1">or {PRO_YEARLY}/year (save 17%)</div>
+              <div className="text-[#8B9CB3] text-sm mt-1">or {PRO_YEARLY}/year (save {PRO_YEARLY_SAVINGS_PERCENT}%)</div>
             </div>
             <ul className="space-y-3 mb-8">
               {proTier.map((item) => (

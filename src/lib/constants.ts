@@ -17,6 +17,9 @@ export const TRADE_MODES = [
 ] as const;
 
 export const PRO_MONTHLY = "$5.99";
-export const PRO_YEARLY = "$49.99";
+export const PRO_YEARLY = "$65.99";
+export const PRO_YEARLY_SAVINGS_PERCENT = Math.round(
+  (1 - 65.99 / (5.99 * 12)) * 100
+);
 export const FREE_TRIAL_DAYS = 7;
 export const LANGUAGE_COUNT = 8;

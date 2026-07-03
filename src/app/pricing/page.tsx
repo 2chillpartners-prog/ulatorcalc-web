@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -77,7 +77,7 @@ export default function PricingPage() {
             <span className="text-5xl font-bold text-white">{PRO_MONTHLY}</span>
             <span className="text-[#8B9CB3] ml-2">/month</span>
           </div>
-          <p className="text-[#8B9CB3] text-sm mb-1">or {PRO_YEARLY}/year — save 17%</p>
+          <p className="text-[#8B9CB3] text-sm mb-1">or {PRO_YEARLY}/year — save {PRO_YEARLY_SAVINGS_PERCENT}%</p>
           <p className="text-[#d97706] text-sm font-semibold mb-8">
             {FREE_TRIAL_DAYS}-day free trial. Cancel anytime in App Store.
           </p>
