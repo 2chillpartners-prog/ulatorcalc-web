@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { APP_NAME, SUPPORT_EMAIL } from "@/lib/constants";
+import { APP_NAME, SUPPORT_EMAIL, BRAND_BADGE } from "@/lib/constants";
 
 const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
@@ -21,7 +21,7 @@ export function Footer() {
               <span className="text-[#C8D6E5]">Logic</span>
             </div>
             <p className="text-[#8B9CB3] text-sm">
-              Built by framers, for framers.
+              {BRAND_BADGE}.
             </p>
             <a
               href={`mailto:${SUPPORT_EMAIL}`}

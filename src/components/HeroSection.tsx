@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { APP_STORE_URL, PLAY_STORE_URL, TAGLINE, TAGLINE_SUB } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, TAGLINE, TAGLINE_SUB, BRAND_BADGE } from "@/lib/constants";
 
 export function HeroSection() {
   return (
@@ -13,10 +13,10 @@ export function HeroSection() {
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* By framers badge */}
+        {/* Brand badge */}
         <div className="flex justify-center mb-8">
           <span className="inline-flex items-center gap-3 bg-[#d97706]/15 text-[#F5A623] text-[1.75rem] font-semibold px-6 py-2.5 rounded-full border border-[#d97706]/30 tracking-wide">
-            <span>🔨</span> By Framers, For Framers
+            <span>🔨</span> {BRAND_BADGE}
           </span>
         </div>
 

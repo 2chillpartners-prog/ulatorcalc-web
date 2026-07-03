@@ -5,6 +5,7 @@ export const PLAY_STORE_URL =
 export const SUPPORT_EMAIL = "support@toolbeltlogic.com";
 export const SITE_URL = "https://www.toolbeltlogic.com";
 export const APP_NAME = "TB Logic";
+export const BRAND_BADGE = "By Construction Pros for Construction Pros";
 export const TAGLINE = "The calculator built for your trade.";
 export const TAGLINE_SUB =
   "Exact feet, inches, and fractions — built by construction workers for construction workers. Whether you're framing walls or pouring slabs, this is your calculator.";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SUPPORT_EMAIL, APP_NAME } from "@/lib/constants";
+import { APP_NAME, SUPPORT_EMAIL, BRAND_BADGE } from "@/lib/constants";
 
 const frustrations = [
   "Can't enter feet and inches natively",
@@ -90,7 +90,7 @@ export default function FeedbackPage() {
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16">
       <div className="mb-10">
         <span className="text-xs font-semibold uppercase tracking-widest text-[#d97706] mb-3 block">
-          By framers, for framers
+          {BRAND_BADGE}
         </span>
         <h1 className="text-4xl font-bold text-white mb-4">Tell us what you need.</h1>
         <p className="text-[#8B9CB3] text-lg leading-relaxed">
