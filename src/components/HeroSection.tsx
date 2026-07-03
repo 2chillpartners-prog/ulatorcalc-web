@@ -6,6 +6,7 @@ import {
   TAGLINE_SUB,
   BRAND_BADGE,
 } from "@/lib/constants";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export function HeroSection() {
   return (
@@ -21,10 +22,7 @@ export function HeroSection() {
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto">
           <div className="mb-6">
-            <p className="text-4xl sm:text-5xl font-bold tracking-tight">
-              <span className="text-[#d97706] font-mono">TB</span>
-              <span className="text-white"> Logic</span>
-            </p>
+            <BrandLogo size="hero" />
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-6">

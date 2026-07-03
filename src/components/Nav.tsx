@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { APP_STORE_URL } from "@/lib/constants";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const links = [
   { href: "/#features", label: "Features" },
@@ -18,9 +19,8 @@ export function Nav() {
     <header className="sticky top-0 z-50 bg-[#0D1B2A]/95 backdrop-blur border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight">
-          <span className="text-[#d97706] font-mono">TB</span>
-          <span className="text-[#C8D6E5]">Logic</span>
+        <Link href="/" className="flex items-center gap-2">
+          <BrandLogo size="nav" />
         </Link>
 
         {/* Desktop nav */}

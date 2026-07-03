@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { APP_NAME, SUPPORT_EMAIL, BRAND_BADGE } from "@/lib/constants";
+import { SUPPORT_EMAIL, BRAND_BADGE } from "@/lib/constants";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
@@ -16,9 +17,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           {/* Brand */}
           <div>
-            <div className="font-bold text-lg mb-1">
-              <span className="text-[#d97706] font-mono">TB</span>
-              <span className="text-[#C8D6E5]">Logic</span>
+            <div className="mb-1">
+              <BrandLogo size="footer" />
             </div>
             <p className="text-[#8B9CB3] text-sm">
               {BRAND_BADGE}.
@@ -46,7 +46,7 @@ export function Footer() {
         </div>
 
         <div className="divider mt-8 pt-6 text-[#8B9CB3] text-xs flex flex-col sm:flex-row sm:justify-between gap-2">
-          <span>© {new Date().getFullYear()} {APP_NAME}. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} TB Logic™. All rights reserved.</span>
           <span>Made for the framing crew.</span>
         </div>
       </div>
