@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { APP_NAME, SUPPORT_EMAIL, BRAND_BADGE } from "@/lib/constants";
+import { APP_NAME, APP_NAME_FULL, SUPPORT_EMAIL, BRAND_BADGE } from "@/lib/constants";
 
 const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
@@ -20,6 +20,7 @@ export function Footer() {
               <span className="text-[#d97706] font-mono">TB</span>
               <span className="text-[#C8D6E5]">Logic</span>
             </div>
+            <p className="text-[#8B9CB3] text-xs tracking-wide mb-1">{APP_NAME_FULL}</p>
             <p className="text-[#8B9CB3] text-sm">
               {BRAND_BADGE}.
             </p>

@@ -1,5 +1,13 @@
 import Image from "next/image";
-import { APP_STORE_URL, PLAY_STORE_URL, TAGLINE, TAGLINE_SUB, BRAND_BADGE } from "@/lib/constants";
+import {
+  APP_NAME,
+  APP_NAME_FULL,
+  APP_STORE_URL,
+  PLAY_STORE_URL,
+  TAGLINE,
+  TAGLINE_SUB,
+  BRAND_BADGE,
+} from "@/lib/constants";
 
 export function HeroSection() {
   return (
@@ -13,17 +21,27 @@ export function HeroSection() {
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Brand badge */}
-        <div className="flex justify-center mb-8">
-          <span className="inline-flex items-center gap-3 bg-[#d97706]/15 text-[#F5A623] text-[1.75rem] font-semibold px-6 py-2.5 rounded-full border border-[#d97706]/30 tracking-wide">
-            <span>🔨</span> {BRAND_BADGE}
-          </span>
-        </div>
-
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
+          <div className="mb-6">
+            <p className="text-4xl sm:text-5xl font-bold tracking-tight">
+              <span className="text-[#d97706] font-mono">TB</span>
+              <span className="text-white"> Logic</span>
+            </p>
+            <p className="text-[#8B9CB3] text-sm sm:text-base mt-2 tracking-wide">
+              {APP_NAME_FULL}
+            </p>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
             {TAGLINE}
           </h1>
+
+          <div className="flex justify-center mb-8">
+            <span className="inline-flex items-center gap-3 bg-[#d97706]/15 text-[#F5A623] text-base sm:text-lg font-semibold px-5 py-2.5 rounded-full border border-[#d97706]/30 tracking-wide">
+              <span>🔨</span> {BRAND_BADGE}
+            </span>
+          </div>
+
           <p className="text-lg sm:text-xl text-[#8B9CB3] leading-relaxed mb-10 max-w-2xl mx-auto">
             {TAGLINE_SUB}
           </p>
@@ -69,7 +87,7 @@ export function HeroSection() {
             <div className="absolute inset-0 scale-90 bg-[#d97706]/20 rounded-[3rem] blur-2xl" aria-hidden="true" />
             <Image
               src="/app-screenshot.png"
-              alt="TB Logic construction mode showing fractions, running tape, and unit conversions"
+              alt={`${APP_NAME} construction mode showing fractions, running tape, and unit conversions`}
               width={320}
               height={693}
               className="relative rounded-[2.5rem] shadow-2xl border border-white/10 w-full h-auto"
