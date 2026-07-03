@@ -22,6 +22,7 @@
   --color-text-muted: var(--text-muted);
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-jetbrains-mono);
+  --font-display: var(--font-oswald);
   --radius-brand: var(--radius);
 }
 

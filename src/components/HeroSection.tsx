@@ -27,9 +27,14 @@ export function HeroSection() {
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
             Every{" "}
-            <span className="text-[#d97706]">T</span>ool
-            <span className="text-[#d97706]">B</span>elt needs{" "}
-            <span className="text-[#d97706]">Logic</span>
+            <span className="font-display font-bold tracking-wide">
+              <span className="text-[#d97706]">T</span>ool
+              <span className="text-[#d97706]">B</span>elt
+            </span>{" "}
+            needs{" "}
+            <span className="font-display font-bold text-[#d97706] tracking-wide">
+              Logic
+            </span>
           </h1>
 
           <div className="flex justify-center mb-8">
