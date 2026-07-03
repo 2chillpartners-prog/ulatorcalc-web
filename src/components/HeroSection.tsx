@@ -1,10 +1,8 @@
 import Image from "next/image";
 import {
   APP_NAME,
-  APP_NAME_FULL,
   APP_STORE_URL,
   PLAY_STORE_URL,
-  TAGLINE,
   TAGLINE_SUB,
   BRAND_BADGE,
 } from "@/lib/constants";
@@ -27,13 +25,13 @@ export function HeroSection() {
               <span className="text-[#d97706] font-mono">TB</span>
               <span className="text-white"> Logic</span>
             </p>
-            <p className="text-[#8B9CB3] text-sm sm:text-base mt-2 tracking-wide">
-              {APP_NAME_FULL}
-            </p>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-6">
-            {TAGLINE}
+            Every{" "}
+            <span className="text-[#d97706]">T</span>ool
+            <span className="text-[#d97706]">B</span>elt needs{" "}
+            <span className="text-[#d97706]">Logic</span>
           </h1>
 
           <div className="flex justify-center mb-8">
