@@ -16,7 +16,7 @@ export const TRADE_MODES = [
   { name: "Plain", icon: "🔢", slug: "plain" },
 ] as const;
 
-export const PRO_MONTHLY = "$4.99";
+export const PRO_MONTHLY = "$5.99";
 export const PRO_YEARLY = "$49.99";
 export const FREE_TRIAL_DAYS = 7;
 export const LANGUAGE_COUNT = 8;

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SUPPORT_EMAIL, APP_NAME, LANGUAGE_COUNT } from "@/lib/constants";
+import { SUPPORT_EMAIL, APP_NAME, LANGUAGE_COUNT, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: `Is ${APP_NAME} free?`,
-    a: "The Plain calculator mode is completely free — exact feet-inch-fraction math, running tape, and deep-link sharing. Pro unlocks Construction mode, 50+ professional formulas, the AI assistant, and voice input for $4.99/month or $49.99/year, with a 7-day free trial.",
+    a: `The Plain calculator mode is completely free — exact feet-inch-fraction math, running tape, and deep-link sharing. Pro unlocks Construction mode, 50+ professional formulas, the AI assistant, and voice input for ${PRO_MONTHLY}/month or ${PRO_YEARLY}/year, with a ${FREE_TRIAL_DAYS}-day free trial.`,
   },
   {
     q: "What calculator modes are available?",
