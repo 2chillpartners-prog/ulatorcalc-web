@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SUPPORT_EMAIL, APP_NAME } from "@/lib/constants";
+import { SUPPORT_EMAIL, APP_NAME, SUBSCRIPTION_CANCEL_SUMMARY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Delete Your Data",
@@ -13,7 +13,7 @@ const steps = [
   },
   {
     title: "Pro subscription",
-    description: `Subscriptions are managed by Apple. Go to iPhone Settings → Apple ID → Subscriptions → ${APP_NAME} → Cancel Subscription. This does not delete your data, just stops billing.`,
+    description: `${SUBSCRIPTION_CANCEL_SUMMARY} Cancelling stops billing but does not delete your on-device data.`,
   },
   {
     title: "Request full account deletion",

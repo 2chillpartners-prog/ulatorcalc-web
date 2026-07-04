@@ -23,3 +23,9 @@ export const PRO_YEARLY_SAVINGS_PERCENT = Math.round(
 );
 export const FREE_TRIAL_DAYS = 7;
 export const LANGUAGE_COUNT = 8;
+
+export const SUBSCRIPTION_BILLING_SUMMARY = `${APP_NAME} Pro is available on iOS (App Store) and Android (Google Play). Subscriptions are billed through Apple or Google in-app purchases, depending on where you subscribed. We do not receive or store your payment information.`;
+
+export const SUBSCRIPTION_TRIAL_NOTE = `${FREE_TRIAL_DAYS}-day free trial on App Store and Google Play. Cancel anytime through the store where you subscribed.`;
+
+export const SUBSCRIPTION_CANCEL_SUMMARY = `You keep Pro access until the end of your billing period after cancelling. iPhone/iPad: Settings → Apple ID → Subscriptions → ${APP_NAME}. Android: Google Play → Profile → Payments & subscriptions → Subscriptions → ${APP_NAME}.`;

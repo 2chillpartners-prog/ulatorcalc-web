@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SUPPORT_EMAIL, APP_NAME } from "@/lib/constants";
+import { SUPPORT_EMAIL, APP_NAME, SUBSCRIPTION_BILLING_SUMMARY, SUBSCRIPTION_CANCEL_SUMMARY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -36,10 +36,10 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-white mb-3">Subscriptions</h2>
           <p>
-            Pro subscriptions are billed through Apple in-app purchases. Subscriptions
-            auto-renew unless cancelled at least 24 hours before the renewal date. You can manage
-            or cancel your subscription in your iPhone Settings → Apple ID → Subscriptions.
+            {SUBSCRIPTION_BILLING_SUMMARY} Subscriptions auto-renew unless cancelled at least
+            24 hours before the renewal date.
           </p>
+          <p className="mt-3">{SUBSCRIPTION_CANCEL_SUMMARY}</p>
         </section>
 
         <section>

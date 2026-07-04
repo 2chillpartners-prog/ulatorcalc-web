@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SUPPORT_EMAIL, APP_NAME, LANGUAGE_COUNT, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS } from "@/lib/constants";
+import { SUPPORT_EMAIL, APP_NAME, LANGUAGE_COUNT, PRO_MONTHLY, PRO_YEARLY, FREE_TRIAL_DAYS, SUBSCRIPTION_CANCEL_SUMMARY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "How do I share a calculation?",
-    a: `Tap the share icon on any result. It generates a deep link that opens the exact calculation in ${APP_NAME} on any iOS device — no account required.`,
+    a: `Tap the share icon on any result. It generates a deep link that opens the exact calculation in ${APP_NAME} on iOS or Android — no account required.`,
   },
   {
     q: `What languages does ${APP_NAME} support?`,
@@ -34,11 +34,11 @@ const faqs = [
   },
   {
     q: "How do I cancel my Pro subscription?",
-    a: `Subscriptions are managed through Apple. Go to Settings → Apple ID → Subscriptions → ${APP_NAME} and tap Cancel. You keep Pro access until the end of your billing period.`,
+    a: SUBSCRIPTION_CANCEL_SUMMARY,
   },
   {
     q: "I found a bug or the app crashed. What should I do?",
-    a: `Email us at ${SUPPORT_EMAIL} with a description of what happened and your iOS version. We typically respond within one business day.`,
+    a: `Email us at ${SUPPORT_EMAIL} with a description of what happened and your device type and OS version (iOS or Android). We typically respond within one business day.`,
   },
   {
     q: `Is ${APP_NAME} available on Android?`,

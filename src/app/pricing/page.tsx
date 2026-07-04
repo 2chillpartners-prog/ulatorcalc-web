@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT, SUBSCRIPTION_TRIAL_NOTE, SUBSCRIPTION_CANCEL_SUMMARY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -79,7 +79,7 @@ export default function PricingPage() {
           </div>
           <p className="text-[#8B9CB3] text-sm mb-1">or {PRO_YEARLY}/year — save {PRO_YEARLY_SAVINGS_PERCENT}%</p>
           <p className="text-[#d97706] text-sm font-semibold mb-8">
-            {FREE_TRIAL_DAYS}-day free trial. Cancel anytime in App Store.
+            {SUBSCRIPTION_TRIAL_NOTE}
           </p>
           <div className="flex flex-col gap-2">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#d97706] hover:bg-[#F5A623] text-white font-bold py-3.5 rounded-xl transition-colors">
@@ -114,8 +114,8 @@ export default function PricingPage() {
         ))}
       </div>
 
-      <p className="text-center text-[#8B9CB3] text-sm mt-8">
-        Subscriptions are managed by Apple. Cancel any time from your iPhone settings.
+      <p className="text-center text-[#8B9CB3] text-sm mt-8 max-w-2xl mx-auto">
+        {SUBSCRIPTION_CANCEL_SUMMARY}
       </p>
     </div>
   );

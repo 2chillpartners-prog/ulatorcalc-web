@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SUPPORT_EMAIL, APP_NAME } from "@/lib/constants";
+import { SUPPORT_EMAIL, APP_NAME, SUBSCRIPTION_BILLING_SUMMARY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -45,10 +45,7 @@ export default function PrivacyPage() {
             </div>
             <div>
               <h3 className="text-[#C8D6E5] font-semibold mb-1">Purchases</h3>
-              <p>
-                Pro subscriptions are handled entirely by Apple through in-app purchases. We do not
-                receive or store your payment information.
-              </p>
+              <p>{SUBSCRIPTION_BILLING_SUMMARY}</p>
             </div>
             <div>
               <h3 className="text-[#C8D6E5] font-semibold mb-1">Calculations</h3>
