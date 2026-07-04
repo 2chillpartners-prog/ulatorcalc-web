@@ -47,7 +47,7 @@ export function Footer() {
 
         <div className="divider mt-8 pt-6 text-[#8B9CB3] text-xs flex flex-col sm:flex-row sm:justify-between gap-2">
           <span>© {new Date().getFullYear()} TB Logic™. All rights reserved.</span>
-          <span>Made for the framing crew.</span>
+          <span>Made for the construction crew.</span>
         </div>
       </div>
     </footer>
