@@ -1,3 +1,4 @@
+import { Resend } from "resend";
 import nodemailer from "nodemailer";
 import type SMTPTransport from "nodemailer/lib/smtp-transport";
 import { SUPPORT_EMAIL } from "@/lib/constants";
@@ -7,11 +8,47 @@ type SmtpOptions = SMTPTransport.Options;
 
 const M365_HOST = "smtp.office365.com";
 const GODADDY_HOST = "smtpout.secureserver.net";
-const DEFAULT_HOST = M365_HOST;
-const DEFAULT_PORT = 587;
+const DEFAULT_SMTP_HOST = M365_HOST;
+const DEFAULT_SMTP_PORT = 587;
 
 function env(name: string): string | undefined {
   return process.env[name]?.trim() || undefined;
+}
+
+function buildFeedbackEmail(input: FeedbackInput) {
+  const name = input.name?.trim() || undefined;
+  const trade = input.trade.trim();
+  const frustration = input.frustration.trim();
+  const mustHave = input.mustHave.trim();
+  const email = input.email?.trim() || undefined;
+
+  const lines = [
+    `New feedback from ${name || "Anonymous"}`,
+    "",
+    `Trade: ${trade}`,
+    `Frustration: ${frustration}`,
+    "",
+    "Must-have feature:",
+    mustHave,
+    "",
+    email ? `Reply to: ${email}` : "No reply email provided",
+    "",
+    `Submitted: ${new Date().toISOString()}`,
+  ];
+
+  return {
+    subject: `TB Logic Feedback — ${trade}`,
+    text: lines.join("\n"),
+    replyTo: email,
+  };
+}
+
+function getResendFromAddress(): string {
+  return env("RESEND_FROM") || `TB Logic Website <${SUPPORT_EMAIL}>`;
+}
+
+export function isResendConfigured(): boolean {
+  return Boolean(env("RESEND_API_KEY"));
 }
 
 function buildTransportOptions(host: string, port: number): SmtpOptions | null {
@@ -32,45 +69,44 @@ function buildTransportOptions(host: string, port: number): SmtpOptions | null {
   };
 }
 
-function getConfiguredHost(): string {
-  return env("SMTP_HOST") || DEFAULT_HOST;
+function getConfiguredSmtpHost(): string {
+  return env("SMTP_HOST") || DEFAULT_SMTP_HOST;
 }
 
-function getConfiguredPort(): number {
-  const port = Number(env("SMTP_PORT") || DEFAULT_PORT);
-  return Number.isFinite(port) ? port : DEFAULT_PORT;
+function getConfiguredSmtpPort(): number {
+  const port = Number(env("SMTP_PORT") || DEFAULT_SMTP_PORT);
+  return Number.isFinite(port) ? port : DEFAULT_SMTP_PORT;
+}
+
+export function isSmtpConfigured(): boolean {
+  return buildTransportOptions(getConfiguredSmtpHost(), getConfiguredSmtpPort()) !== null;
 }
 
 export function isSupportEmailConfigured(): boolean {
-  return buildTransportOptions(getConfiguredHost(), getConfiguredPort()) !== null;
+  return isResendConfigured() || isSmtpConfigured();
 }
 
-function getHostAttempts(): string[] {
-  const configured = getConfiguredHost();
-  const hosts = [configured];
+function getSmtpTransportAttempts(): SmtpOptions[] {
+  const primaryPort = getConfiguredSmtpPort();
+  const configuredHost = getConfiguredSmtpHost();
+  const hosts =
+    configuredHost === GODADDY_HOST
+      ? [configuredHost, M365_HOST]
+      : configuredHost === M365_HOST
+        ? [configuredHost]
+        : [configuredHost, M365_HOST, GODADDY_HOST];
 
-  if (configured === GODADDY_HOST) hosts.push(M365_HOST);
-  if (configured === M365_HOST) hosts.push(GODADDY_HOST);
-
-  return [...new Set(hosts)];
-}
-
-function getPortAttempts(host: string, primaryPort: number): number[] {
-  if (host === M365_HOST) return [587];
-
-  if (primaryPort === 587 || primaryPort === 465) {
-    return primaryPort === 587 ? [587, 465] : [465, 587];
-  }
-
-  return [587, 465];
-}
-
-function getTransportAttempts(): SmtpOptions[] {
-  const primaryPort = getConfiguredPort();
   const attempts: SmtpOptions[] = [];
 
-  for (const host of getHostAttempts()) {
-    for (const port of getPortAttempts(host, primaryPort)) {
+  for (const host of [...new Set(hosts)]) {
+    const ports =
+      host === M365_HOST
+        ? [587]
+        : primaryPort === 587 || primaryPort === 465
+          ? [primaryPort, primaryPort === 587 ? 465 : 587]
+          : [587, 465];
+
+    for (const port of ports) {
       const options = buildTransportOptions(host, port);
       if (!options) continue;
 
@@ -84,47 +120,48 @@ function getTransportAttempts(): SmtpOptions[] {
   return attempts;
 }
 
-export async function sendFeedbackNotification(input: FeedbackInput): Promise<boolean> {
-  const attempts = getTransportAttempts();
+async function sendViaResend(input: FeedbackInput): Promise<boolean> {
+  const apiKey = env("RESEND_API_KEY");
+  if (!apiKey) return false;
+
+  const resend = new Resend(apiKey);
+  const mail = buildFeedbackEmail(input);
+
+  const { error } = await resend.emails.send({
+    from: getResendFromAddress(),
+    to: [SUPPORT_EMAIL],
+    replyTo: mail.replyTo,
+    subject: mail.subject,
+    text: mail.text,
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return true;
+}
+
+async function sendViaSmtp(input: FeedbackInput): Promise<boolean> {
+  const attempts = getSmtpTransportAttempts();
   if (attempts.length === 0) return false;
 
-  const name = input.name?.trim() || undefined;
-  const trade = input.trade.trim();
-  const frustration = input.frustration.trim();
-  const mustHave = input.mustHave.trim();
-  const email = input.email?.trim() || undefined;
-
+  const mail = buildFeedbackEmail(input);
   const fromAddress = env("SMTP_FROM") || env("SMTP_USER")!;
   const from = `TB Logic Website <${fromAddress}>`;
-
-  const lines = [
-    `New feedback from ${name || "Anonymous"}`,
-    "",
-    `Trade: ${trade}`,
-    `Frustration: ${frustration}`,
-    "",
-    "Must-have feature:",
-    mustHave,
-    "",
-    email ? `Reply to: ${email}` : "No reply email provided",
-    "",
-    `Submitted: ${new Date().toISOString()}`,
-  ];
-
-  const mail = {
-    from,
-    to: SUPPORT_EMAIL,
-    replyTo: email,
-    subject: `TB Logic Feedback — ${trade}`,
-    text: lines.join("\n"),
-  };
 
   let lastError: unknown;
 
   for (const options of attempts) {
     try {
       const transporter = nodemailer.createTransport(options);
-      await transporter.sendMail(mail);
+      await transporter.sendMail({
+        from,
+        to: SUPPORT_EMAIL,
+        replyTo: mail.replyTo,
+        subject: mail.subject,
+        text: mail.text,
+      });
       return true;
     } catch (error) {
       lastError = error;
@@ -137,4 +174,34 @@ export async function sendFeedbackNotification(input: FeedbackInput): Promise<bo
   }
 
   throw lastError;
+}
+
+export async function sendFeedbackNotification(input: FeedbackInput): Promise<boolean> {
+  const errors: string[] = [];
+
+  if (isResendConfigured()) {
+    try {
+      return await sendViaResend(input);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      errors.push(`Resend: ${message}`);
+      console.error("Resend send failed:", message);
+    }
+  }
+
+  if (isSmtpConfigured()) {
+    try {
+      return await sendViaSmtp(input);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      errors.push(`SMTP: ${message}`);
+      console.error("SMTP send failed:", message);
+    }
+  }
+
+  if (errors.length > 0) {
+    throw new Error(errors.join(" | "));
+  }
+
+  return false;
 }

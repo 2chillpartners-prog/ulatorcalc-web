@@ -219,7 +219,7 @@ export default function FeedbackPage() {
         )}
 
         <p className="text-center text-[#8B9CB3] text-xs">
-          Your feedback is sent directly to our team. No account needed.
+          Your feedback is emailed directly to our team at {SUPPORT_EMAIL}. No account needed.
         </p>
       </form>
     </div>
