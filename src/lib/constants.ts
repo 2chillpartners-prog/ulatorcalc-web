@@ -3,7 +3,7 @@ export const APP_STORE_URL =
   "https://apps.apple.com/us/app/tb-logic/id6783934469";
 export const PLAY_STORE_URL =
   process.env.NEXT_PUBLIC_PLAY_STORE_URL?.trim() ||
-  "https://play.google.com/store/apps/details?id=com.ulatorcalc";
+  "https://play.google.com/store/apps/details?id=com.ulatorcalc.app";
 export const SUPPORT_EMAIL = "support@toolbeltlogic.com";
 export const SITE_URL = "https://www.toolbeltlogic.com";
 export const APP_NAME = "TB Logic";
