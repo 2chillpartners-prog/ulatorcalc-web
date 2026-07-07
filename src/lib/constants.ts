@@ -1,6 +1,6 @@
 export const APP_STORE_URL =
   process.env.NEXT_PUBLIC_APP_STORE_URL?.trim() ||
-  "https://apps.apple.com/app/calc-pal/id6759688305";
+  "https://apps.apple.com/us/app/tb-logic/id6783934469";
 export const PLAY_STORE_URL =
   process.env.NEXT_PUBLIC_PLAY_STORE_URL?.trim() ||
   "https://play.google.com/store/apps/details?id=com.ulatorcalc";
