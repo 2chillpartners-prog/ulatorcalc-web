@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, WEB_APP_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT } from "@/lib/constants";
 
 const freeTier = [
   "Plain calculator mode",
@@ -56,6 +56,9 @@ export function PricingTeaser() {
               <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3 rounded-xl transition-colors text-sm">
                 Google Play
               </a>
+              <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3 rounded-xl transition-colors text-sm">
+                Use on Web
+              </a>
             </div>
           </div>
 
@@ -86,6 +89,9 @@ export function PricingTeaser() {
               </a>
               <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#d97706]/80 hover:bg-[#d97706] text-white font-bold py-3 rounded-xl transition-colors text-sm">
                 Google Play — Start Free Trial
+              </a>
+              <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#d97706]/80 hover:bg-[#d97706] text-white font-bold py-3 rounded-xl transition-colors text-sm">
+                Use on Web
               </a>
             </div>
           </div>

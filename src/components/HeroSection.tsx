@@ -3,6 +3,7 @@ import {
   APP_NAME,
   APP_STORE_URL,
   PLAY_STORE_URL,
+  WEB_APP_URL,
   TAGLINE_SUB,
   BRAND_BADGE,
 } from "@/lib/constants";
@@ -63,12 +64,24 @@ export function HeroSection() {
               href={PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#1B2838] hover:bg-[#243447] border border-white/20 hover:border-white/40 text-white font-bold px-7 py-4 rounded-xl text-base transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-3 bg-[#d97706] hover:bg-[#F5A623] text-white font-bold px-7 py-4 rounded-xl text-base transition-all shadow-lg shadow-[#d97706]/25 hover:shadow-[#d97706]/40 hover:-translate-y-0.5"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.18 23.76c.3.17.65.19.97.07l.1-.06 11.02-6.36-2.39-2.4-9.7 8.75zM.5 1.4C.19 1.74 0 2.27 0 2.96v18.08c0 .69.19 1.22.51 1.56l.08.08 10.12-10.12v-.24L.58 1.32.5 1.4zM20.13 10.4l-2.55-1.47-2.69 2.69 2.69 2.69 2.56-1.48c.73-.42.73-1.1 0-1.52l-.01.09zM4.15.24L15.17 6.6l-2.39 2.4L3.08.23l.1-.06c.3-.11.64-.1.97.07z" />
               </svg>
               Google Play
+            </a>
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#d97706] hover:bg-[#F5A623] text-white font-bold px-7 py-4 rounded-xl text-base transition-all shadow-lg shadow-[#d97706]/25 hover:shadow-[#d97706]/40 hover:-translate-y-0.5"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <circle cx="12" cy="12" r="10" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20" />
+              </svg>
+              Use on Web
             </a>
             <a
               href="/pricing"

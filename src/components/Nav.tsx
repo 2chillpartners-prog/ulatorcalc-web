@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, WEB_APP_URL } from "@/lib/constants";
 import { BrandLogo } from "@/components/BrandLogo";
 
 const links = [
@@ -46,9 +46,17 @@ export function Nav() {
             href={PLAY_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#1B2838] hover:bg-[#243447] border border-white/20 hover:border-white/40 text-white text-sm font-semibold px-3 py-2 rounded-lg transition-colors"
+            className="bg-[#d97706] hover:bg-[#F5A623] text-white text-sm font-semibold px-3 py-2 rounded-lg transition-colors"
           >
             Google Play
+          </a>
+          <a
+            href={WEB_APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#d97706] hover:bg-[#F5A623] text-white text-sm font-semibold px-3 py-2 rounded-lg transition-colors"
+          >
+            Use on Web
           </a>
         </div>
 
@@ -96,9 +104,17 @@ export function Nav() {
               href={PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-[#1B2838] border border-white/20 text-white text-center font-semibold px-4 py-2 rounded-lg"
+              className="block bg-[#d97706] text-white text-center font-semibold px-4 py-2 rounded-lg"
             >
               Google Play
+            </a>
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-[#d97706] text-white text-center font-semibold px-4 py-2 rounded-lg"
+            >
+              Use on Web
             </a>
           </div>
         </div>

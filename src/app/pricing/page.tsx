@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { APP_STORE_URL, PLAY_STORE_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT, SUBSCRIPTION_TRIAL_NOTE, SUBSCRIPTION_CANCEL_SUMMARY } from "@/lib/constants";
+import { APP_STORE_URL, PLAY_STORE_URL, WEB_APP_URL, PRO_MONTHLY, PRO_YEARLY, PRO_YEARLY_SAVINGS_PERCENT, FREE_TRIAL_DAYS, LANGUAGE_COUNT, SUBSCRIPTION_TRIAL_NOTE, SUBSCRIPTION_CANCEL_SUMMARY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -64,6 +64,9 @@ export default function PricingPage() {
             <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3.5 rounded-xl transition-colors">
               Google Play
             </a>
+            <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#243447] hover:bg-[#2d3f52] text-[#C8D6E5] font-semibold py-3.5 rounded-xl transition-colors">
+              Use on Web
+            </a>
           </div>
         </div>
 
@@ -87,6 +90,9 @@ export default function PricingPage() {
             </a>
             <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#d97706]/80 hover:bg-[#d97706] text-white font-bold py-3.5 rounded-xl transition-colors">
               Google Play — {FREE_TRIAL_DAYS}-Day Free Trial
+            </a>
+            <a href={WEB_APP_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-[#d97706]/80 hover:bg-[#d97706] text-white font-bold py-3.5 rounded-xl transition-colors">
+              Use on Web
             </a>
           </div>
         </div>

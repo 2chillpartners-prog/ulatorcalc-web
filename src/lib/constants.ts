@@ -4,6 +4,8 @@ export const APP_STORE_URL =
 export const PLAY_STORE_URL =
   process.env.NEXT_PUBLIC_PLAY_STORE_URL?.trim() ||
   "https://play.google.com/store/apps/details?id=com.ulatorcalc.app";
+export const WEB_APP_URL =
+  process.env.NEXT_PUBLIC_WEB_APP_URL?.trim() || "https://tb-logic.com/app";
 export const SUPPORT_EMAIL = "support@toolbeltlogic.com";
 export const SITE_URL = "https://www.toolbeltlogic.com";
 export const APP_NAME = "TB Logic";
